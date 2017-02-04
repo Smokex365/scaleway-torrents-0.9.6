@@ -7,7 +7,7 @@ SOURCE_URL =		https://github.com/scaleway-community/scaleway-torrents-0.9.6
 SHELL_DOCKER_OPTS ?=	-p 80:80
 DEFAULT_IMAGE_ARCH ?=	x86_64
 
-IMAGE_VOLUME_SIZE =	100G
+IMAGE_VOLUME_SIZE =	50G
 IMAGE_BOOTSCRIPT =	latest
 IMAGE_NAME =		Torrents 1.3.0
 
