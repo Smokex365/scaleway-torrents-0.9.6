@@ -1,9 +1,9 @@
-NAME =			torrents-9.6.0/0.13.6-
+NAME =			torrents-0.9.6
 VERSION =		latest
 VERSION_ALIASES =	1.3.0
 TITLE =			Seedbox
 DESCRIPTION =		rtorrent and ruTorrent (web interface)
-SOURCE_URL =		https://github.com/scaleway-community/scaleway-torrents
+SOURCE_URL =		https://github.com/scaleway-community/scaleway-torrents-0.9.6
 SHELL_DOCKER_OPTS ?=	-p 80:80
 DEFAULT_IMAGE_ARCH ?=	x86_64
 
