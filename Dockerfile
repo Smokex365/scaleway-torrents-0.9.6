@@ -26,7 +26,7 @@ RUN apt-get -q update \
     supervisor \
     rtorrent \
     nginx \
-    php5-cli php5-fpm \
+    php7.0-cli php7.0-fpm \
     mediainfo unzip unrar \
     libav-tools \
     vsftpd libpam-pwdfile
