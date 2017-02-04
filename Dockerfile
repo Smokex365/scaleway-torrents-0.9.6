@@ -1,4 +1,4 @@
-## -*- docker-image-name: "scaleway/torrents:latest" -*-
+## -*- docker-image-name: "scaleway/torrents-0.9.6:latest" -*-
 FROM scaleway/ubuntu:amd64-xenial
 # following 'FROM' lines are used dynamically thanks do the image-builder
 # which dynamically update the Dockerfile if needed.
