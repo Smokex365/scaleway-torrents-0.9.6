@@ -112,7 +112,7 @@ COPY ./patches/etc/init/vsftpd-keys.conf /etc/init/vsftpd-keys.conf
 #
 # php-fpm configuration
 #
-COPY ./patches/etc/php5/fpm/conf.d/50-scaleway.ini /etc/php5/fpm/conf.d/50-scaleway.ini
+COPY ./patches/etc/php7.0/fpm/conf.d/50-scaleway.ini /etc/php7.0/fpm/conf.d/50-scaleway.ini
 
 
 # Clean rootfs from image-builder
