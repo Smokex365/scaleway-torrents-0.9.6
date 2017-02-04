@@ -1,4 +1,4 @@
-NAME =			torrents (9.6.0/0.13.6)
+NAME =			torrents-9.6.0/0.13.6-
 VERSION =		latest
 VERSION_ALIASES =	1.3.0
 TITLE =			Seedbox
