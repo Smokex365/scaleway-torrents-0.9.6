@@ -40,7 +40,7 @@ RUN apt-get -q update                   \
 
 # Software versions
 #ENV RUTORRENT_COMMIT=ac2db1536302bdc5b27aff6b15d54b0e9837fa59  \
-    RUTORRENT_VERSION=3.7                                       \#
+#RUTORRENT_VERSION=3.7                                       \#
 ENV H5AI_VERSION=0.27.0
 
 
