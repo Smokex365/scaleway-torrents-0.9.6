@@ -10,6 +10,9 @@ FROM scaleway/ubuntu:amd64-xenial
 
 MAINTAINER Scaleway <opensource@scaleway.com> (@scaleway), Smokex365 <admin@dragonfall.net>
 
+#some elements taken from linuxserver/docker-rutorrent & linuxserver/docker-rutorrent-armhf
+# https://github.com/linuxserver/docker-rutorrent
+# https://github.com/linuxserver/docker-rutorrent-armhf
 
 # Prepare rootfs for image-builder
 RUN /usr/local/sbin/scw-builder-enter
@@ -26,7 +29,9 @@ RUN apt-get -q update                   \
       supervisor                        \
       rtorrent                          \
       nginx                             \
-      php5-cli php5-fpm                 \
+	  # 16.04 only has php 7.0 packages
+      php7.0-cgi php7.0-fpm php7.0-json \
+	  php7.0-mbstring php-pear			\
       mediainfo unzip unrar             \
       libav-tools                       \
       vsftpd libpam-pwdfile             \
@@ -34,9 +39,9 @@ RUN apt-get -q update                   \
 
 
 # Software versions
-ENV RUTORRENT_COMMIT=ac2db1536302bdc5b27aff6b15d54b0e9837fa59  \
-    RUTORRENT_VERSION=3.7                                      \
-    H5AI_VERSION=0.27.0
+#ENV RUTORRENT_COMMIT=ac2db1536302bdc5b27aff6b15d54b0e9837fa59  \
+    RUTORRENT_VERSION=3.7                                       \#
+ENV H5AI_VERSION=0.27.0
 
 
 #
@@ -63,8 +68,8 @@ COPY ./overlay/etc/supervisor/conf.d/rtorrent.conf /etc/supervisor/conf.d/
 
 # Extract ruTorrent, edit config and remove useless plugins
 RUN mkdir -p /var/www/rutorrent/ \
-  && curl -sNL https://github.com/Novik/ruTorrent/archive/${RUTORRENT_COMMIT}.tar.gz  \
-     | tar xzv --strip 1 -C /var/www/rutorrent/                                       \
+  && curl -sNL "https://github.com/Novik/ruTorrent/archive/master.tar.gz"  \
+     | tar xzv --strip 1 -C /var/www/rutorrent/                                        \
   && mv /var/www/rutorrent/conf/config.php /var/www/rutorrent/conf/config_base.php    \
   && rm -fr /var/www/rutorrent/plugins/httprpc /var/www/rutorrent/plugins/rpc         \
   && mv /var/www/rutorrent/plugins/screenshots/conf.php                               \
